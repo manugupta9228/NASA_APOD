@@ -12,6 +12,7 @@ import UIKit
 class APODFavouriteViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noItemLabel: UILabel!
     
     public var context: NSManagedObjectContext!
     
@@ -43,20 +44,39 @@ class APODFavouriteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        tableView.register(UINib(nibName: "APODFavouriteTableViewCell",
-                                 bundle: nil),
-                           forCellReuseIdentifier: APODFavouriteTableViewCell.reuseIdentifier)
+        setupView()        
+    }
+    
+    func setupView() {
+        title = "Favourites"
+        setupTableView()
+        setupFRC()
+    }
+    
+    func setupFRC() {
         do {
             try self.fetchedResultsController.performFetch()
+            if fetchedResultsController.fetchedObjects?.count ?? 0 > 0 {
+                tableView.isHidden = false
+                noItemLabel.isHidden = true
+            } else {
+                tableView.isHidden = true
+                noItemLabel.isHidden = false
+            }
         } catch {
             let fetchError = error as NSError
             print("Unable to Perform Fetch Request")
             print("\(fetchError), \(fetchError.localizedDescription)")
         }
+    }
+    
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(UINib(nibName: APODFavouriteTableViewCell.reuseIdentifier,
+                                 bundle: nil),
+                           forCellReuseIdentifier: APODFavouriteTableViewCell.reuseIdentifier)
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
@@ -71,7 +91,7 @@ extension APODFavouriteViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: APODFavouriteTableViewCell.reuseIdentifier, for: indexPath) as? APODFavouriteTableViewCell else { fatalError("Unexpected Index Path") }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: APODFavouriteTableViewCell.reuseIdentifier, for: indexPath) as? APODFavouriteTableViewCell else { return UITableViewCell() }
         
         configureCell(cell, at: indexPath)
         return cell

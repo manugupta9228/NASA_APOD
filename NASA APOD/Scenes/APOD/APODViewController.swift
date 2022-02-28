@@ -17,8 +17,6 @@ class APODViewController: UIViewController {
     
     var activityIndicator = UIActivityIndicatorView(style: .large)
     
-    var loadingView : ActivityIndicatorView!
-    
     var viewModel: APODViewModel!
     
     var displayModel: APOD.DisplayModel?

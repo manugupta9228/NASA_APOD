@@ -25,9 +25,6 @@ public enum Service {
         guard let baseURLString = Service.infoDictionary[PlistKeys.baseURL] as? String else {
             fatalError("Base URL not set in plist for this environment")
         }
-//        guard let url = URL(string: baseURLString) else {
-//            fatalError("Invalid Base URL")
-//        }
         return baseURLString
     }()
     
@@ -35,9 +32,6 @@ public enum Service {
         guard let apiKey = Service.infoDictionary[PlistKeys.apiKey] as? String else {
             fatalError("Base URL not set in plist for this environment")
         }
-//        guard let url = URL(string: baseURLString) else {
-//            fatalError("Invalid Base URL")
-//        }
         return apiKey
     }()
 }

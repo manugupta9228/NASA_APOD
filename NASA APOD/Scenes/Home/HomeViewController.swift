@@ -32,10 +32,17 @@ class HomeViewController: UIViewController {
         }
     
     @IBAction func searchButtonTapped(_ sender: UIButton) {
-        let storyBoard = UIStoryboard.init(name: "APOD", bundle: Bundle.main)
-        if let apodViewController = storyBoard.instantiateViewController(withIdentifier: "APODViewController") as? APODViewController {
-            apodViewController.viewModel = APODViewModel(date: dateTextField.text)
-            self.navigationController?.pushViewController(apodViewController, animated: true)
+        if Reachability.isConnectedToNetwork() {
+            let storyBoard = UIStoryboard.init(name: "APOD", bundle: Bundle.main)
+            if let apodViewController = storyBoard.instantiateViewController(withIdentifier: "APODViewController") as? APODViewController {
+                apodViewController.viewModel = APODViewModel(date: dateTextField.text)
+                self.navigationController?.pushViewController(apodViewController, animated: true)
+            }
+        }else{
+            let alert = UIAlertController(title: "Alert", message: "You are not connected to internet. Please connect and try again", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     

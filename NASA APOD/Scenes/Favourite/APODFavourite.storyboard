@@ -22,14 +22,24 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently you don't have anything added as Favourite." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="370-fc-aVz">
+                                <rect key="frame" x="24" y="424" width="366" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="370-fc-aVz" secondAttribute="trailing" constant="24" id="0h7-Mg-8Tn"/>
                             <constraint firstAttribute="bottom" secondItem="x8I-Ez-UfY" secondAttribute="bottom" id="3Ty-33-1Db"/>
+                            <constraint firstItem="370-fc-aVz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="DjY-EL-you"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="x8I-Ez-UfY" secondAttribute="trailing" id="KUP-2u-dOH"/>
                             <constraint firstItem="x8I-Ez-UfY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Sdg-iF-piB"/>
                             <constraint firstItem="x8I-Ez-UfY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="h9X-PN-a2W"/>
+                            <constraint firstItem="370-fc-aVz" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="m5p-Lu-adX"/>
+                            <constraint firstItem="370-fc-aVz" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="y2F-Q4-P3n"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="bAT-YB-bEd">
@@ -42,6 +52,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="noItemLabel" destination="370-fc-aVz" id="jcI-g0-sLv"/>
                         <outlet property="tableView" destination="x8I-Ez-UfY" id="IR6-CS-ojb"/>
                     </connections>
                 </viewController>
