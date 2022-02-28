@@ -2,9 +2,6 @@
 
 1. [Getting Started](#getting-started)
 1. [Common Libraries](#common-libraries)
-1. [Architecture](#architecture)
-1. [Stores](#stores)
-1. [Assets](#assets)
 1. [Coding Style](#coding-style)
 
 ## Getting Started
