@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iiF-uR-MVL">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Mfg-Hd-REM">
+            <objects>
+                <navigationController id="iiF-uR-MVL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5xO-04-GJ8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="U2B-pb-0mY" kind="relationship" relationship="rootViewController" id="465-kv-lAV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hV2-6f-Shx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-770" y="335"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="sPD-E4-I2f">
+            <objects>
+                <viewController id="U2B-pb-0mY" customClass="HomeViewController" customModule="NASA_APOD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="df7-X0-uBP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to NASA Astronomy Picture of the Day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y36-Dm-nCO">
+                                <rect key="frame" x="24" y="330.5" width="366" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlJ-57-pYM">
+                                <rect key="frame" x="24" y="782" width="366" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ngn-hL-AMU"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="PROCEED" cornerStyle="capsule">
+                                    <color key="baseBackgroundColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="searchButtonTapped:" destination="U2B-pb-0mY" eventType="touchUpInside" id="gUu-t2-eJe"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R7r-Yf-fSX">
+                                <rect key="frame" x="24" y="441" width="366" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="oR9-41-fVc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select the date to view or proceed with today's date." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuB-St-3rP">
+                                <rect key="frame" x="24" y="390.5" width="366" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rocketIcon" translatesAutoresizingMaskIntoConstraints="NO" id="zge-dg-4SR">
+                                <rect key="frame" x="122" y="112" width="170.5" height="170.5"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tRG-Gx-ErH"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="NuB-St-3rP" firstAttribute="leading" secondItem="tRG-Gx-ErH" secondAttribute="leading" constant="24" id="0Rr-EK-WQF"/>
+                            <constraint firstItem="tRG-Gx-ErH" firstAttribute="trailing" secondItem="NuB-St-3rP" secondAttribute="trailing" constant="24" id="1UG-dP-730"/>
+                            <constraint firstItem="R7r-Yf-fSX" firstAttribute="top" secondItem="NuB-St-3rP" secondAttribute="bottom" constant="12" id="4fS-Xy-b8r"/>
+                            <constraint firstItem="vlJ-57-pYM" firstAttribute="leading" secondItem="tRG-Gx-ErH" secondAttribute="leading" constant="24" id="5op-L9-BwY"/>
+                            <constraint firstItem="NuB-St-3rP" firstAttribute="top" secondItem="Y36-Dm-nCO" secondAttribute="bottom" constant="12" id="8QK-CI-ecy"/>
+                            <constraint firstItem="tRG-Gx-ErH" firstAttribute="trailing" secondItem="R7r-Yf-fSX" secondAttribute="trailing" constant="24" id="8Vt-IL-T2X"/>
+                            <constraint firstItem="R7r-Yf-fSX" firstAttribute="leading" secondItem="tRG-Gx-ErH" secondAttribute="leading" constant="24" id="8kk-Ua-rc3"/>
+                            <constraint firstItem="zge-dg-4SR" firstAttribute="top" secondItem="tRG-Gx-ErH" secondAttribute="top" constant="24" id="HAg-qZ-u6E"/>
+                            <constraint firstAttribute="trailing" secondItem="Y36-Dm-nCO" secondAttribute="trailing" constant="24" id="SUr-oI-ngl"/>
+                            <constraint firstItem="tRG-Gx-ErH" firstAttribute="trailing" secondItem="vlJ-57-pYM" secondAttribute="trailing" constant="24" id="VJT-gr-RMY"/>
+                            <constraint firstItem="tRG-Gx-ErH" firstAttribute="bottom" secondItem="vlJ-57-pYM" secondAttribute="bottom" constant="40" id="Vg4-eT-b6x"/>
+                            <constraint firstItem="Y36-Dm-nCO" firstAttribute="top" secondItem="zge-dg-4SR" secondAttribute="bottom" constant="48" id="Yfg-tz-VKs"/>
+                            <constraint firstItem="Y36-Dm-nCO" firstAttribute="leading" secondItem="df7-X0-uBP" secondAttribute="leading" constant="24" id="glw-m1-pIn"/>
+                            <constraint firstItem="zge-dg-4SR" firstAttribute="centerX" secondItem="df7-X0-uBP" secondAttribute="centerX" id="iGd-7i-KyM"/>
+                            <constraint firstItem="tRG-Gx-ErH" firstAttribute="trailing" secondItem="vlJ-57-pYM" secondAttribute="trailing" constant="24" id="wCM-gs-CI8"/>
+                            <constraint firstItem="R7r-Yf-fSX" firstAttribute="centerX" secondItem="df7-X0-uBP" secondAttribute="centerX" id="wGc-iO-qBY"/>
+                            <constraint firstItem="vlJ-57-pYM" firstAttribute="leading" secondItem="tRG-Gx-ErH" secondAttribute="leading" constant="24" id="wII-N6-uAQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hCg-yY-QCy">
+                        <barButtonItem key="rightBarButtonItem" id="4ub-Xi-WIC">
+                            <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                            <color key="tintColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="showFavButtonTapped:" destination="U2B-pb-0mY" id="coc-ix-26I"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dateTextField" destination="R7r-Yf-fSX" id="1it-rt-Cfs"/>
+                        <outlet property="searchButton" destination="vlJ-57-pYM" id="XnD-tt-GNl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w6f-Jz-Zra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7.2463768115942031" y="334.82142857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="rocketIcon" width="170.5" height="170.5"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
